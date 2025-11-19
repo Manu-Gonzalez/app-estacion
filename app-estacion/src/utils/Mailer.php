@@ -14,13 +14,13 @@ class Mailer {
     
     private function configurar() {
         $this->mail->isSMTP();
-        $this->mail->Host = 'smtp.gmail.com';
+        $this->mail->Host = MAIL_HOST;
         $this->mail->SMTPAuth = true;
-        $this->mail->Username = 'tu-email@gmail.com'; // Cambiar por tu email
-        $this->mail->Password = 'tu-app-password'; // Cambiar por tu app password
+        $this->mail->Username = MAIL_USERNAME;
+        $this->mail->Password = MAIL_PASSWORD;
         $this->mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
         $this->mail->Port = 587;
-        $this->mail->setFrom('tu-email@gmail.com', 'App Estación');
+        $this->mail->setFrom(MAIL_FROM_EMAIL, MAIL_FROM_NAME);
         $this->mail->isHTML(true);
     }
     
